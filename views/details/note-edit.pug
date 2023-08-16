@@ -1,0 +1,28 @@
+extends ../layout/navbar-layout.pug
+
+
+
+
+
+block content
+ 
+  .container.mt-5
+    .row.justify-content-center
+      .col-md-8
+        .card
+          .card-header.text-center
+            h3  #{user.username}
+            h3 Edit
+          .card-body
+            form( method="POST")
+              .form-group
+                label(for="note_title") Başlık
+                input#title.form-control(type="text", name="note_title", required,value=content ? content.note_title : '')
+                input#title.form-control(type="hidden", name="note_id", required,value=content ? content.noteNumber : '')
+                
+                //value=firstNote ? firstNote.note_title : ''
+              .form-group
+                label(for="note") İçerik
+                textarea#content.form-control(name="note", rows="5" )=value=content ? content.note : ''
+                //= value=firstNote ? firstNote.note : ''
+              button.btn.btn-primary(type="submit") Güncelle

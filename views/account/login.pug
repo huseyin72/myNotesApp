@@ -1,0 +1,30 @@
+extends ../layout/account-layout.pug
+block content
+  .container.mt-5
+    .row.justify-content-center
+      .col-md-6
+        if warning 
+          h4 #{warning}
+      
+        .card
+          .card-header.text-center
+            h3 Giriş Yap
+          .card-body
+            form(action="/login", method="post")
+              .form-group
+                label(for="email") E-posta
+                input#email.form-control(type="email", name="email", required)
+              .form-group
+                label(for="password") Parola
+                input#password.form-control(type="password", name="password", required)
+              .row
+                .col-3
+                  button.btn.btn-primary(type="submit") Giriş Yap
+                .col-6.text-center
+                  a(href='/reset-password') Parolanızı unuttunuz mu?
+              .row
+                .col-3
+                .col-9
+                  a(href='/register').ml-4 Kaydol
+
+                

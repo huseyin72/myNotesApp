@@ -1,0 +1,23 @@
+extends ../layout/navbar-layout.pug
+block content
+  .container.mt-5
+
+    .row.justify-content-center
+      .col-md-6
+        if warning 
+          h4 #{warning}  
+        .card
+          .card-header.text-center
+            h3 Kayıt Ol
+          .card-body
+            form(action="/register", method="post")
+              .form-group
+                label(for="username") Kullanıcı Adı
+                input#username.form-control(type="text", name="username", required)
+              .form-group
+                label(for="email") E-posta
+                input#email.form-control(type="email", name="email", required)
+              .form-group
+                label(for="password") Parola
+                input#password.form-control(type="password", name="password", required)
+              button.btn.btn-primary(type="submit") Kaydol

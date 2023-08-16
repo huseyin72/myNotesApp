@@ -1,0 +1,10 @@
+.list-group(id="list-tab" role="tablist")
+    .row.mb-5
+        
+    each note in notes
+        .row
+            .col-8.mb-3 
+                a.list-group-item.list-group-item-action(href=`/note/${note.noteNumber}`) #{note.note_title}
+            .col-4.mb-3 
+                a.list-group-item.list-group-item-action(href=`/note/edit/${note.noteNumber}`) Edit
+

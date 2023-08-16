@@ -1,0 +1,14 @@
+extends ../layout/navbar-layout.pug
+
+block content
+    .row
+        .col-lg-6.offset-lg-3
+            .card
+            .card-header Note Detayı
+            .card-body
+                h5.card-title #{note.note_title}
+                p.card-text  #{note.note}
+                p.card-text
+                small  #{note.createdAt}
+                p.card-text
+                small  #{note.updatedAt}

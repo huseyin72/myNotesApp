@@ -1,0 +1,24 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container
+        
+        a.navbar-brand(href="#") LOGO
+                //img(src="logo.png", alt="Logo", width="40", height="40")
+        
+          
+        
+        // Sağ köşe login/logout düğmesi
+        .navbar-collapse.justify-content-end
+            ul.navbar-nav
+                if  user
+                    li.nav-item
+                        a.nav-link  #{user.username}
+                    li.nav-item
+                        a.nav-link(href="/logout") Çıkış Yap
+                else
+                    li.nav-item
+                        a.nav-link(href="/login") Giriş Yap
+
+                     
+
+                
+                    
