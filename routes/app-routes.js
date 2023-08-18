@@ -44,6 +44,12 @@ router.get('/note/edit/:note_id',requireAuth,controller.getNoteEdit);
 router.post('/note/edit/:note_id',requireAuth,controller.postNoteEdit)
 
 
+//note delete
+router.get('/delete/:id',requireAuth,controller.getDeleteNote);
+
+
+
+
 
 
 //reset password
@@ -53,6 +59,9 @@ router.post('/reset-password',logoutMid,controller.postResetPassword);
 // email sent link
 router.get('/reset/:token/:id',logoutMid,controller.getResetLink);
 router.post('/reset/:token/:id',logoutMid,controller.postResetLink);
+
+
+
 
 
 module.exports = router;

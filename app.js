@@ -65,21 +65,10 @@ async function startApp() {
     app.use(routes)
 
 
-    //Cookies
-    app.get('/set-cookies', (req, res) => {
-        //res.setHeader('set-cookie','newUser=true')
-        res.cookie('newUser', false);
-        res.cookie('isEmployee', true, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true });
-        res.send('you got the cookies');
-    });
 
 
-    app.get('/read-cookies', (req, res) => {
-        const cookies = req.cookies;
-        console.log(cookies);
-        res.json(cookies);
 
-    });
+
 
 
 

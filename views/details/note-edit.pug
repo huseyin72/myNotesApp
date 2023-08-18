@@ -26,3 +26,5 @@ block content
                 textarea#content.form-control(name="note", rows="5" )=value=content ? content.note : ''
                 //= value=firstNote ? firstNote.note : ''
               button.btn.btn-primary(type="submit") Güncelle
+            a.btn.btn-danger.mt-3(href=`/delete/${content.noteNumber}`) Delete
+            

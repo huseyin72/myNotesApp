@@ -138,6 +138,8 @@ exports.getNoteEdit = async (req,res) =>{
 
 }
 
+
+
 exports.postNoteEdit = async (req,res) =>{
     
     await Notes.findOneAndUpdate({noteNumber:req.body.note_id},{note_title:req.body.note_title,note:req.body.note,updatedAt: Date.now()});
@@ -146,6 +148,24 @@ exports.postNoteEdit = async (req,res) =>{
     res.redirect('/');
 
 }
+//delete note
+exports.getDeleteNote = async (req,res) =>{
+    const noteUserId = await Notes.findOne({noteNumber:req.params.id},'user_id');
+    
+    if(noteUserId.user_id.equals(res.locals.user._id)){
+        await Notes.deleteOne({user_id:res.locals.user._id});
+        res.redirect('/');
+    }
+    else{
+        res.redirect('/');
+    }
+    
+
+
+
+}
+
+
 
 
 // view note
