@@ -2,7 +2,8 @@ const client = require('../database');
 const User = require('../models/User');
 const Notes = require('../models/Notes');
 const jwt = require('jsonwebtoken');
-const { sendResetMail } = require('../sendmail/sendmail');
+const { sendResetMail } = require('../sendmail');
+//const { sendResetMail } = require('../sendmail/sendmail');
 const crypto = require('crypto');
 
  
