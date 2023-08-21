@@ -1,14 +1,39 @@
 extends ../layout/navbar-layout.pug
 
 block content
+    style.
+        .auto-height-textarea {
+            overflow: hidden;
+            
+           height:auto;
+            min-height: 30rem;
+            width:40rem;
+        }
+        .card{
+            width:50rem;
+        }
+        .card-header{
+            width:50rem;
+        }
+        .card-body{
+            width:50rem;
+        }
+        .col-custom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
     .row
-        .col-lg-6.offset-lg-3
-            .card
-            .card-header Note Detayı
-            .card-body
-                h5.card-title #{note.note_title}
-                p.card-text  #{note.note}
-                p.card-text
-                small  #{note.createdAt}
-                p.card-text
-                small  #{note.updatedAt}
+        .col6.offset-lg-3.col-custom
+            .card.mt-5
+                .card-header Note Detayı
+                .card-body
+                    h5.card-title #{note.note_title}
+                    textarea.auto-height-textarea(disabled)  #{note.note}
+                    p.card-text
+                    small cretedAt  #{note.createdAt}
+                    p.card-text
+                    small updatedAt  #{note.updatedAt}

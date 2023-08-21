@@ -5,7 +5,15 @@ extends ../layout/main-layout.pug
 
 
 block content
- 
+  style.
+    .card{
+      width: 45rem;
+      height: 50rem;
+        }
+    #content{
+      height:30rem;
+    }
+
   .container.mt-5
     .row.justify-content-center
       .col-md-8
@@ -24,5 +32,11 @@ block content
               .form-group
                 label(for="note") İçerik
                 textarea#content.form-control(name="note", rows="5" )=value=content ? content.note : ''
+                script.
+                  ClassicEditor
+                    .create(document.querySelector('#content'))
+                    .catch(error => {
+                        console.error(error);
+                    });
                 //= value=firstNote ? firstNote.note : ''
               button.btn.btn-primary(type="submit") Not Ekle
