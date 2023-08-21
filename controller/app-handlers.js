@@ -150,10 +150,11 @@ exports.postNoteEdit = async (req,res) =>{
 }
 //delete note
 exports.getDeleteNote = async (req,res) =>{
-    const noteUserId = await Notes.findOne({noteNumber:req.params.id},'user_id');
+    const noteUserId = await Notes.findOne({noteNumber:req.params.id});
     
     if(noteUserId.user_id.equals(res.locals.user._id)){
-        await Notes.deleteOne({user_id:res.locals.user._id});
+
+        await Notes.deleteOne({noteNumber:req.params.id});
         res.redirect('/');
     }
     else{
